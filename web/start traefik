@@ -1,0 +1,2 @@
+docker run --name traefik --network=web53-net --restart=always -p 5000:8080 -p 80:80 -d -p 443:443 --mount type=bind,source=/root/src/traefik.yml,target=/etc/traefik/traefik.yml --mount type=bind,source=/var/run/docker.sock,target=/var/run/docker.sock --mount type=bind,source=/root/src/dynamic_conf.yml,target=/etc/traefik/dynamic_conf.yml --mount type=bind,source=/root/src/supercert.pem,target=/etc/traefik/supercert.pem --mount type=bind,source=/root/src/supercert.key,target=/etc/traefik/supercert.key traefik:v2.4
+traefik     v2.4
